@@ -4,7 +4,6 @@ from keras.models import Sequential
 from keras.layers.core import Dense
 from keras.optimizers import sgd
 
-
 class Catch(object):
     def __init__(self, grid_size=10):
         self.grid_size = grid_size
@@ -61,6 +60,7 @@ class Catch(object):
         n = np.random.randint(0, self.grid_size-1, size=1)
         m = np.random.randint(1, self.grid_size-2, size=1)
         self.state = np.asarray([0, n, m])[np.newaxis]
+
 class ExperienceReplay(object):
     def __init__(self, max_memory=100, discount=.9):
         self.max_memory = max_memory
